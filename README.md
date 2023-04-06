@@ -2,6 +2,8 @@
 
 该项目使用技术栈为 vue3 全家桶 + webpack ，使用了 element ui 组件库，其中加入了响应式布局功能，能在 PC 端、移动端、平板端完美兼容显示，如果觉得不错请给一个 star 哦。(￣ ▽ ￣)／
 
+原项目地址 ☞ [<原项目地址>](https://github.com/Li-MLong/oldResume)
+
 ## 模板效果
 
 点击查看效果 ☞ [<个人简历主页>](https://li-mlong.github.io)
