@@ -85,4 +85,33 @@ body,
 body {
   cursor: url(./assets/blue.png), auto;
 }
+
+.needAllHeight {
+  height: 100%;
+}
+
+.shadow-box {
+  width: 60%;
+  height: 70%;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+  background: linear-gradient(
+    to top right,
+    rgba(90, 149, 207, 0.2),
+    rgba(58, 76, 99, 0.2)
+  );
+  box-shadow: 10px -10px 20px rgba(0, 0, 0, 0.2),
+    -10px 10px 20px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(1px);
+  border-radius: 20px;
+}
+
+.BMap_cpyCtrl {
+  display: none !important;
+}
 </style>

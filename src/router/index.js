@@ -1,6 +1,5 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import Home from "../views/Home";
-import Cookie from "js-cookie";
 
 const routes = [
   {
@@ -19,7 +18,23 @@ const routes = [
     name: "stereograph",
     component: () =>
       import(/* webpackChunkName: "Stereograph" */ "../views/Stereograph"),
-  }
+  },
+  {
+    path: "/mymap",
+    name: "mymap",
+    component: () =>
+      import(/* webpackChunkName: "MyMap" */ "../views/MyMap"),
+  },
+  {
+    path: "/404",
+    name: "404",
+    component: () =>
+      import(/* webpackChunkName: "404" */ "../views/404"),
+  },
+  {
+    path: "/:catchAll(.*)",
+    redirect: "/404",
+  },
 ];
 
 const router = createRouter({

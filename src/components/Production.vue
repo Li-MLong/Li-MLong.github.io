@@ -1,27 +1,48 @@
 <template>
   <div class="production">
-    <div class="box-left">
-      <ImgDiv
-        :productions="productions[0]"
-        img="cangku.png"
-      ></ImgDiv>
-      <ImgDiv
-        :productions="productions[1]"
-        img="xiaochengxu.png"
-      ></ImgDiv>
-    </div>
-    <div>
-      <ImgDiv
-        :productions="productions[2]"
-        img="guanwang.png"
-      ></ImgDiv>
-    </div>
-    <div class="box-bottom">
-      <ImgDiv
-        :productions="productions[3]"
-        img="region.jpg"
-      ></ImgDiv>
-    </div>
+    <el-row :gutter="20" class="row-box">
+      <el-col :lg="12" :md="24">
+        <el-row class="row-box">
+          <el-col :md="24">
+            <ImgDiv
+              :productions="productions[0]"
+              img="cangku.png"
+            ></ImgDiv>
+          </el-col>
+        </el-row>
+        <el-row class="row-box row-item">
+          <el-col :md="24">
+            <ImgDiv
+              :productions="productions[1]"
+              img="xiaochengxu.png"
+            ></ImgDiv>
+          </el-col>
+        </el-row>
+      </el-col>
+
+      <el-col :lg="12" :md="24" class="needAllHeight">
+        <ImgDiv
+          :productions="productions[2]"
+          img="guanwang.png"
+        ></ImgDiv>
+      </el-col>
+    </el-row>
+    <el-row :gutter="20" class="row-box">
+      <el-col :lg="12" :md="24">
+        <ImgDiv
+          :productions="productions[3]"
+          img="region.jpg"
+          routerLink="/stereograph"
+        ></ImgDiv>
+      </el-col>
+      <el-col :lg="12" :md="24" class="row-lg-item">
+        <ImgDiv
+          :productions="productions[4]"
+          img="map.png"
+          routerLink="/mymap"
+        ></ImgDiv>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -50,30 +71,16 @@ export default {
 </script>
 
 <style lang="less" scope>
-.production {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  > div {
-    overflow: hidden;
-    width: 50%;
-  }
-  .box-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    > div {
-      height: 50%;
-    }
-  }
-  .box-bottom {
-    width: 100%;
-    height: 200px;
-    > div {
-      width: 100%;
-      height: 100%;
-    }
+.row-box {
+  margin-bottom: 10px;
+}
+.row-item {
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  .row-lg-item {
+    margin-top: 20px;
   }
 }
 </style>

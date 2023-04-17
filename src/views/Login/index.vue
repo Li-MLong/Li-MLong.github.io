@@ -68,7 +68,6 @@ export default {
 
     const handleLogin = async formEl => {
       if (!formEl) return;
-      console.log(process.env);
       await formEl.validate((valid, fields) => {
         if (valid) {
           loading.value = true;
@@ -108,53 +107,6 @@ export default {
     };
   },
 };
-
-/* import {
-  Component,
-  Vue,
-  Ref,
-} from "vue-property-decorator";
-const Cookie = require("js-cookie");
-
-@Component
-export default class ClassName extends Vue {
-  @Ref() form: any;
-
-  loading: boolean = false;
-  loginForm: any = {
-    password: "",
-  };
-  loginRules: object = {
-    password: [
-      {
-        required: true,
-        message: "请输入简历手机号",
-        trigger: "change",
-      },
-    ],
-  };
-  handleLogin() {
-    this.form.validate((valid: boolean) => {
-      if (valid) {
-        this.loading = true;
-        setTimeout(() => {
-          if (this.loginForm.password == "13849141247") {
-            Cookie.set("token", this.loginForm.password);
-            this.$message.success("成功登录");
-            this.$router.push({ path: "/", replace: true });
-          } else {
-            this.$message.error(
-              "访问密码错误,请输入简历手机号",
-            );
-          }
-          this.loading = false;
-        }, 500);
-      } else {
-        return false;
-      }
-    });
-  }
-} */
 </script>
 
 <style lang="less" scope>

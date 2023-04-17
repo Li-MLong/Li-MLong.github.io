@@ -5,10 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
       name="viewport"
-      content="width=device-width,initial-scale=1.0"
+      content="width=device-width,initial-scale=1.0,user-scalable=no"
     />
     <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <title>李某人 的简历</title>
+
+    <script
+      type="text/javascript"
+      src="https://api.map.baidu.com/getscript?v=1.0&&type=webgl&ak=<%= process.env.VUE_APP_MAP_APK1 %>"
+    ></script>
+    <script type="text/javascript" async>
+      window._AMapSecurityConfig = {
+        securityJsCode: `<%= process.env.VUE_APP_MAP_KEY %>`,
+      };
+    </script>
+    <script
+      type="text/javascript"
+      src="https://webapi.amap.com/maps?v=2.0&key=<%= process.env.VUE_APP_MAP_APK2 %>"
+    ></script>
   </head>
   <body>
     <noscript>
@@ -19,16 +33,13 @@
       >
     </noscript>
     <div id="app"></div>
-    <script>
-      if (screen.width > 800) {
-        var script = document.createElement("script");
-        script.setAttribute("color", "163,220,247");
-        script.setAttribute("pointColor", "0,0,0");
-        script.setAttribute("count", "100");
-        script.src = "/js/canvas-nest.js";
-        document.body.appendChild(script);
-      }
-    </script>
+    <script
+      src="/js/canvas-nest.js"
+      color="0,0,0"
+      opacity="0.8"
+      count="200"
+      zIndex="1"
+    ></script>
     <script src="/js/cross-stitchWork.js"></script>
   </body>
 </html>

@@ -1,6 +1,7 @@
-
 const { defineConfig } = require("@vue/cli-service");
-const { env } = require("process");
+
+const port = process.env.VUE_APP_PORT || 80; // 端口
+const api = process.env.VUE_APP_BASE_API; // api请求前缀
 
 module.exports = defineConfig({
   transpileDependencies: true,
@@ -10,14 +11,13 @@ module.exports = defineConfig({
   // 服务器配置
   devServer: {
     host: "0.0.0.0",
-    open: true,
-    port: env.VUE_PORT,
+    port: port,
     proxy: {
-      [env.VUE_BASE_API]: {
+      [api]: {
         target: "http://localhost:3000",
         changeOrigin: true,
         pathRewrite: {
-          [env.VUE_BASE_API]: ''
+          [api]: ''
         },
       },
     },

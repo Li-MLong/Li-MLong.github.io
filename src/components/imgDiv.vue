@@ -33,6 +33,10 @@ export default {
       type: String,
       default: "",
     },
+    routerLink: {
+      type: String || null,
+      default: "",
+    },
   },
   setup(props) {
     const router = useRouter();
@@ -42,11 +46,11 @@ export default {
 
     function goHref(e, href) {
       e.preventDefault();
-      if (href) {
-        window.open(href);
+      if (props.routerLink) {
+        router.push(props.routerLink);
         return;
       }
-      router.push("/stereograph");
+      window.open(href);
     }
 
     return {
@@ -61,6 +65,7 @@ export default {
 .img_div {
   position: relative;
   width: 100%;
+  height: 100%;
   box-sizing: border-box;
   margin: 5px 10px;
   .mask {
